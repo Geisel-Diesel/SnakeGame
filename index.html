@@ -1,0 +1,37 @@
+<html>
+
+<head>
+	<title> snakeGame</title>
+	
+	<style>
+	#canvas
+	{
+		background-color: #000;
+	}
+	</style>
+	</head>
+	
+	<body>
+		<canvas id = "canvas" width = "300px" height = "300px"> </canvas>
+	</body>
+	
+<script>
+ 
+window.onload = function()
+{
+	var cvs = document.getElementById("canvas");
+	var cxt = cvs.getContext("2d");
+	
+	var cvsW = cvs.width;
+	var cvsH = cvs.height;
+	
+	var snakeW = 10;
+	var snakeH = 10;
+	
+	cxt.fillStyle = "white";
+	cxt.fillRect(10,10,snakeW,snakeH);
+	
+}
+</script>
+
+</html>
