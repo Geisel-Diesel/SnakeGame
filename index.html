@@ -6,7 +6,7 @@
 	<style>
 	#canvas
 	{
-		background-color: #000;
+		background-color: #000; 
 	}
 	</style>
 	</head>
@@ -25,13 +25,53 @@ window.onload = function()
 	var cvsW = cvs.width;
 	var cvsH = cvs.height;
 	
-	var snakeW = 10;
+	var snakeW = 10; 
 	var snakeH = 10;
 	
+	function drawSnake(x,y)
+	{
 	cxt.fillStyle = "white";
-	cxt.fillRect(10,10,snakeW,snakeH);
+	cxt.fillRect(x*snakeW,y*snakeH,snakeW,snakeH);
 	
+	cxt.fillStyle = "#000"; //black color
+	cxt.strokeRect(x*snakeW,y*snakeH,snakeW,snakeH);
+	
+	}
+	
+	//Snake will be 4 cells long by default
+	
+	var len = 4;
+	var snake = [];
+	
+	for(var i = len-1; i>=0; i--)
+	{
+		snake.push(
+			{x:i,
+			 y:0
+			}
+		);	
+	}
+	
+	function draw()
+	{
+		for(var i=0; i<snake.length;i++)
+		{
+			var x = snake[i].x;
+			var y = snake[i].y;
+			drawSnake(x,y);
+		}
+	}
+	
+	//Snake Head
+	var snakeX = snake[0].x;
+	var snakeY = snake[0].y;
+	
+	//Remove last part of tail
+	snake.pop();
+	
+	setInterval(draw,60);
 }
+
 </script>
 
 </html>
