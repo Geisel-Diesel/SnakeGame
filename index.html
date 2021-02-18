@@ -129,7 +129,7 @@ window.onload = function()
 	var snakeX = snake[0].x;
 	var snakeY = snake[0].y;
 	
-	//if snake hits any wall, game over
+	//if snake hits any wall or itself, game over and reset
 	if(snakeX < 0 || snakeY < 0 || snakeX >=cvsW/snakeW || snakeY >= cvsH/snakeH || checkCollision(snakeX,snakeY,snake))
 	{
 		window.location.reload();
